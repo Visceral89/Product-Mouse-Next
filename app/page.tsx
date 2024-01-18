@@ -7,7 +7,10 @@ import Navigation from "./components/Navigation";
 
 export default function Home() {
 	const [activeSection, setActiveSection] = useState(0);
-	const sectionRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+	const section1Ref = useRef(null);
+	const section2Ref = useRef(null);
+	const section3Ref = useRef(null);
+	const section4Ref = useRef(null);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -24,10 +27,9 @@ export default function Home() {
 			{ threshold: 0.6 }
 		);
 
-		sectionRefs.forEach((ref) => {
-			if (ref.current) {
-				observer.observe(ref.current);
-			}
+		const refs = [section1Ref, section2Ref /* ... more refs */];
+		refs.forEach((ref) => {
+			if (ref.current) observer.observe(ref.current);
 		});
 
 		return () => {
