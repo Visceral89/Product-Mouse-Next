@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import styles from "../styles/Navigation.module.scss";
-import { useEffect, useState } from "react";
 
 export default function Navigation({ activeSelectionIndex }: any) {
 	return (
