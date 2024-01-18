@@ -3,27 +3,18 @@
 import Link from "next/link";
 import styles from "../styles/Navigation.module.scss";
 import { useEffect, useState } from "react";
-import { useInView } from "framer-motion";
 
-export default function Navigation({ sectionRefs }) {
-	const [activeSection, setActiveSection] = useState(null);
-
-	useEffect(() => {
-		sectionRefs.forEach((ref, index) => {
-			if (useInView(ref.current)) {
-				setActiveSection(index);
-			}
-		});
-	}, [sectionRefs]);
-
+export default function Navigation({ activeSelectionIndex }: any) {
 	return (
 		<nav>
-			{sectionRefs.map((_: any, index: number) => (
+			{[...Array(5)].map((_, index) => (
 				<Link
 					key={index}
 					href={`#section${index + 1}`}
-					className={activeSection === index ? "highlight" : ""}
-				></Link>
+					className={activeSelectionIndex === index ? styles.active : ""}
+				>
+					<div></div>
+				</Link>
 			))}
 		</nav>
 	);
