@@ -11,7 +11,9 @@ export default function Navigation({ activeSelectionIndex }: any) {
 				<Link
 					key={index}
 					href={`#section${index + 1}`}
-					className={activeSelectionIndex === index ? styles.active : ""}
+					className={
+						activeSelectionIndex === index ? styles.active : styles.inactive
+					}
 				>
 					<div></div>
 				</Link>
