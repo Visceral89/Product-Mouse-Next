@@ -7,15 +7,15 @@ interface Props {
 	activeSectionIndex: number;
 }
 
-const AboutSection = forwardRef<HTMLDivElement, Props>(
+const SpecsSection = forwardRef<HTMLDivElement, Props>(
 	({ activeSectionIndex }, ref) => {
 		return (
 			<section ref={ref}>
 				<Navigation activeSectionIndex={activeSectionIndex} />
-				About Section
+				Specs Section
 			</section>
 		);
 	}
 );
 
-export default AboutSection;
+export default SpecsSection;

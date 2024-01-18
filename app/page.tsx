@@ -6,6 +6,9 @@ import { useEffect, useRef, useState, forwardRef } from "react";
 
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+import DetailsSection from "./components/DetailsSection";
+import ProductSection from "./components/ProductSection";
+import SpecsSection from "./components/SpecsSection";
 
 export default function Home() {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0);
@@ -14,6 +17,7 @@ export default function Home() {
 	const section2Ref = useRef(null);
 	const section3Ref = useRef(null);
 	const section4Ref = useRef(null);
+	const section5Ref = useRef(null);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -40,11 +44,15 @@ export default function Home() {
 		<main className={styles.main}>
 			<HeroSection activeSectionIndex={activeSectionIndex} ref={section1Ref} />
 			<AboutSection activeSectionIndex={activeSectionIndex} ref={section2Ref} />
-			{/* Replace theese divs with acctual components */}
-			<div id='section1'></div>
-			<div id='section2'></div>
-			<div id='section3'></div>
-			<div id='section4'></div>
+			<DetailsSection
+				activeSectionIndex={activeSectionIndex}
+				ref={section3Ref}
+			/>
+			<ProductSection
+				activeSectionIndex={activeSectionIndex}
+				ref={section4Ref}
+			/>
+			<SpecsSection activeSectionIndex={activeSectionIndex} ref={section5Ref} />
 		</main>
 	);
 }

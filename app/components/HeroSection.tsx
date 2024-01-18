@@ -11,8 +11,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(
 	({ activeSectionIndex }, ref) => {
 		return (
 			<section ref={ref}>
-				{" "}
 				<Navigation activeSectionIndex={activeSectionIndex} />
+				Hero Section
 			</section>
 		);
 	}
