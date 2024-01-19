@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import styles from "../styles/Navigation.module.scss";
+import Circle from "../utils/Cicle";
+import CircleActive from "../utils/CicleActive";
 
 export default function Navigation({ activeSelectionIndex }: any) {
 	return (
@@ -14,7 +16,7 @@ export default function Navigation({ activeSelectionIndex }: any) {
 						activeSelectionIndex === index ? styles.active : styles.inactive
 					}
 				>
-					<div></div>
+					{activeSelectionIndex === index ? <CircleActive /> : <Circle />}
 				</Link>
 			))}
 		</nav>
