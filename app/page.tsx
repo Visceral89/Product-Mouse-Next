@@ -3,13 +3,13 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import { useEffect, useRef, useState, forwardRef } from "react";
-
+/*
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import DetailsSection from "./components/DetailsSection";
 import ProductSection from "./components/ProductSection";
 import SpecsSection from "./components/SpecsSection";
-
+*/
 export default function Home() {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 
