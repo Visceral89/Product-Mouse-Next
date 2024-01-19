@@ -5,7 +5,7 @@ import styles from "../styles/Navigation.module.scss";
 
 export default function Navigation({ activeSelectionIndex }: any) {
 	return (
-		<nav>
+		<nav className={styles.navigation}>
 			{[...Array(5)].map((_, index) => (
 				<Link
 					key={index}

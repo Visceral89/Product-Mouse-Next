@@ -10,9 +10,9 @@ interface Props {
 const HeroSection = forwardRef<HTMLDivElement, Props>(
 	({ activeSectionIndex }, ref) => {
 		return (
-			<section ref={ref}>
+			<section className={styles.heroSection} ref={ref}>
 				<Navigation activeSectionIndex={activeSectionIndex} />
-				Hero Section
+				<div>Hero</div>
 			</section>
 		);
 	}
