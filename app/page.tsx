@@ -3,6 +3,14 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import { useEffect, useRef, useState, forwardRef } from "react";
+
+import {
+	HeroSection,
+	AboutSection,
+	DetailsSection,
+	ProductSection,
+	SpecsSection,
+} from "./utils";
 /*
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
