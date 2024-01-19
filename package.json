@@ -1,24 +1,24 @@
 {
-  "name": "product-mouse",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "framer-motion": "^10.18.0",
-    "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "sass": "^1.70.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5"
-  }
+	"name": "product-mouse",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbo",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"framer-motion": "^10.18.0",
+		"next": "14.0.4",
+		"react": "^18",
+		"react-dom": "^18",
+		"sass": "^1.70.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"typescript": "^5"
+	}
 }

@@ -3,7 +3,7 @@ import styles from "../styles/Navbar.module.scss";
 
 export default function Navbar() {
 	return (
-		<nav>
+		<nav className={styles.navbar}>
 			<div>Logo</div>
 			<div>
 				<Link href={"/"}>Home</Link>
