@@ -2,15 +2,22 @@
 
 import Image from "next/image";
 import styles from "./page.module.scss";
-import { useEffect, useRef, useState } from "react";
-import Navigation from "./components/Navigation";
+import { useEffect, useRef, useState, forwardRef } from "react";
+
+import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
+import DetailsSection from "./components/DetailsSection";
+import ProductSection from "./components/ProductSection";
+import SpecsSection from "./components/SpecsSection";
 
 export default function Home() {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+
 	const section1Ref = useRef(null);
 	const section2Ref = useRef(null);
 	const section3Ref = useRef(null);
 	const section4Ref = useRef(null);
+	const section5Ref = useRef(null);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -21,11 +28,11 @@ export default function Home() {
 					setActiveSectionIndex(visibleSectionIndex);
 				}
 			},
-			{ threshold: 0.5 }
+			{ threshold: 0.6 }
 		);
 
 		// Observe each section
-		const refs = [section1Ref, section2Ref /* ... more refs */];
+		const refs = [section1Ref, section2Ref, section3Ref, section4Ref];
 		refs.forEach((ref) => {
 			if (ref.current) observer.observe(ref.current);
 		});
@@ -35,12 +42,17 @@ export default function Home() {
 
 	return (
 		<main className={styles.main}>
-			<Navigation activeSelectionIndex={activeSectionIndex} />
-			{/* Replace theese divs with acctual components */}
-			<div id='section1'></div>
-			<div id='section2'></div>
-			<div id='section3'></div>
-			<div id='section4'></div>
+			<HeroSection activeSectionIndex={activeSectionIndex} ref={section1Ref} />
+			<AboutSection activeSectionIndex={activeSectionIndex} ref={section2Ref} />
+			<DetailsSection
+				activeSectionIndex={activeSectionIndex}
+				ref={section3Ref}
+			/>
+			<ProductSection
+				activeSectionIndex={activeSectionIndex}
+				ref={section4Ref}
+			/>
+			<SpecsSection activeSectionIndex={activeSectionIndex} ref={section5Ref} />
 		</main>
 	);
 }
