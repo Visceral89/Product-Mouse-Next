@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./page.module.scss";
-import { useEffect, useRef, useState, forwardRef } from "react";
+import { useEffect, useRef, useState, createRef } from "react";
 
 import {
 	HeroSection,
@@ -21,46 +21,60 @@ import SpecsSection from "./components/SpecsSection";
 export default function Home() {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 
-	const section1Ref = useRef(null);
-	const section2Ref = useRef(null);
-	const section3Ref = useRef(null);
-	const section4Ref = useRef(null);
-	const section5Ref = useRef(null);
+	// Create an array to hold refs for each section
+	const sectionRefs = useRef([...Array(5)].map(() => createRef()));
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
-				const visibleSection = entries.find((entry) => entry.isIntersecting);
-				if (visibleSection) {
-					const visibleSectionIndex = entries.indexOf(visibleSection);
-					setActiveSectionIndex(visibleSectionIndex);
-				}
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						// Find the index of the section that is currently visible
+						const visibleSectionIndex = sectionRefs.current.findIndex(
+							(ref) => ref.current === entry.target
+						);
+						setActiveSectionIndex(visibleSectionIndex);
+					}
+				});
 			},
 			{ threshold: 0.6 }
 		);
 
 		// Observe each section
-		const refs = [section1Ref, section2Ref, section3Ref, section4Ref];
-		refs.forEach((ref) => {
+		sectionRefs.current.forEach((ref) => {
 			if (ref.current) observer.observe(ref.current);
 		});
 
-		return () => observer.disconnect();
+		// Cleanup
+		return () => {
+			sectionRefs.current.forEach((ref) => {
+				if (ref.current) observer.unobserve(ref.current);
+			});
+		};
 	}, []);
 
 	return (
 		<main className={styles.main}>
-			<HeroSection activeSectionIndex={activeSectionIndex} ref={section1Ref} />
-			<AboutSection activeSectionIndex={activeSectionIndex} ref={section2Ref} />
+			<HeroSection
+				activeSectionIndex={activeSectionIndex}
+				ref={sectionRefs.current[0]}
+			/>
+			<AboutSection
+				activeSectionIndex={activeSectionIndex}
+				ref={sectionRefs.current[1]}
+			/>
 			<DetailsSection
 				activeSectionIndex={activeSectionIndex}
-				ref={section3Ref}
+				ref={sectionRefs.current[2]}
 			/>
 			<ProductSection
 				activeSectionIndex={activeSectionIndex}
-				ref={section4Ref}
+				ref={sectionRefs.current[3]}
 			/>
-			<SpecsSection activeSectionIndex={activeSectionIndex} ref={section5Ref} />
+			<SpecsSection
+				activeSectionIndex={activeSectionIndex}
+				ref={sectionRefs.current[4]}
+			/>
 		</main>
 	);
 }

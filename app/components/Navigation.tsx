@@ -5,8 +5,8 @@ import styles from "../styles/Navigation.module.scss";
 import Circle from "../utils/Cicle";
 import CircleActive from "../utils/CicleActive";
 
-export default function Navigation({ activeSelectionIndex }: any) {
-	console.log(activeSelectionIndex);
+export default function Navigation({ activeSectionIndex }: any) {
+	console.log(activeSectionIndex);
 
 	return (
 		<nav className={styles.navigation}>
@@ -15,10 +15,10 @@ export default function Navigation({ activeSelectionIndex }: any) {
 					key={index}
 					href={`#section${index + 1}`}
 					className={
-						activeSelectionIndex === index ? styles.active : styles.inactive
+						activeSectionIndex === index ? styles.active : styles.inactive
 					}
 				>
-					{activeSelectionIndex === index ? <CircleActive /> : <Circle />}
+					{activeSectionIndex === index ? <CircleActive /> : <Circle />}
 				</Link>
 			))}
 		</nav>
