@@ -50,27 +50,31 @@ export default function Home() {
 
 	return (
 		<main className={styles.main}>
-			<Navigation activeSectionIndex={activeSectionIndex} />
-			<HeroSection
-				activeSectionIndex={activeSectionIndex}
-				ref={sectionRefs.current[0]}
-			/>
-			<AboutSection
-				activeSectionIndex={activeSectionIndex}
-				ref={sectionRefs.current[1]}
-			/>
-			<DetailsSection
-				activeSectionIndex={activeSectionIndex}
-				ref={sectionRefs.current[2]}
-			/>
-			<ProductSection
-				activeSectionIndex={activeSectionIndex}
-				ref={sectionRefs.current[3]}
-			/>
-			<SpecsSection
-				activeSectionIndex={activeSectionIndex}
-				ref={sectionRefs.current[4]}
-			/>
+			<div className={styles.navigationContainer}>
+				<Navigation activeSectionIndex={activeSectionIndex} />
+			</div>
+			<div className={styles.sections}>
+				<HeroSection
+					activeSectionIndex={activeSectionIndex}
+					ref={sectionRefs.current[0]}
+				/>
+				<AboutSection
+					activeSectionIndex={activeSectionIndex}
+					ref={sectionRefs.current[1]}
+				/>
+				<DetailsSection
+					activeSectionIndex={activeSectionIndex}
+					ref={sectionRefs.current[2]}
+				/>
+				<ProductSection
+					activeSectionIndex={activeSectionIndex}
+					ref={sectionRefs.current[3]}
+				/>
+				<SpecsSection
+					activeSectionIndex={activeSectionIndex}
+					ref={sectionRefs.current[4]}
+				/>
+			</div>
 		</main>
 	);
 }

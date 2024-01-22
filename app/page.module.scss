@@ -1,9 +1,14 @@
 .main {
 	display: flex;
-	flex-direction: column;
 }
 
-.navigation{
-    display: flex;
-    
+.navigationContainer {
+	position: sticky;
+	z-index: 999;
+	top: 0px;
+}
+
+.sections {
+	display: flex;
+	flex-direction: column;
 }

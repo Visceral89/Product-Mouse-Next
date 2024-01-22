@@ -7,14 +7,12 @@ interface Props {
 	activeSectionIndex: number;
 }
 
-const SpecsSection = forwardRef<HTMLDivElement, Props>(
-	({ activeSectionIndex }, ref) => {
-		return (
-			<section id='section5' className={styles.Section} ref={ref}>
-				Specs Section
-			</section>
-		);
-	}
-);
+const SpecsSection = forwardRef<HTMLDivElement>((props, ref) => {
+	return (
+		<section id='section5' className={styles.Section} ref={ref}>
+			Specs Section
+		</section>
+	);
+});
 
 export default SpecsSection;
