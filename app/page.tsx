@@ -11,13 +11,7 @@ import {
 	ProductSection,
 	SpecsSection,
 } from "./utils";
-/*
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import DetailsSection from "./components/DetailsSection";
-import ProductSection from "./components/ProductSection";
-import SpecsSection from "./components/SpecsSection";
-*/
+
 export default function Home() {
 	const [activeSectionIndex, setActiveSectionIndex] = useState(0);
 
