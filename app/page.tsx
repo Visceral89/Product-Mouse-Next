@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import { useEffect, useRef, useState, createRef } from "react";
+import Navigation from "./components/Navigation";
 
 import {
 	HeroSection,
@@ -49,6 +50,7 @@ export default function Home() {
 
 	return (
 		<main className={styles.main}>
+			<Navigation activeSectionIndex={activeSectionIndex} />
 			<HeroSection
 				activeSectionIndex={activeSectionIndex}
 				ref={sectionRefs.current[0]}
