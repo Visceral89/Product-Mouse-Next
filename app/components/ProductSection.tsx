@@ -12,7 +12,7 @@ const ProductSection = forwardRef<HTMLDivElement, Props>(
 		return (
 			<section id='section4' className={styles.Section} ref={ref}>
 				<Navigation activeSectionIndex={activeSectionIndex} />
-				Component Section
+				Product Section
 			</section>
 		);
 	}
