@@ -5,7 +5,11 @@
 .navigationContainer {
 	position: sticky;
 	z-index: 999;
-	top: 0px;
+	top: 0;
+	height: 700px;
+	width: 5rem;
+	display: flex;
+	margin-left: 4rem;
 }
 
 .sections {
