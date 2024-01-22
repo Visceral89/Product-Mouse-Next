@@ -6,6 +6,8 @@ import Circle from "../utils/Cicle";
 import CircleActive from "../utils/CicleActive";
 
 export default function Navigation({ activeSelectionIndex }: any) {
+	console.log(activeSelectionIndex);
+
 	return (
 		<nav className={styles.navigation}>
 			{[...Array(5)].map((_, index) => (

@@ -10,7 +10,7 @@ interface Props {
 const ProductSection = forwardRef<HTMLDivElement, Props>(
 	({ activeSectionIndex }, ref) => {
 		return (
-			<section ref={ref}>
+			<section id='section4' className={styles.Section} ref={ref}>
 				<Navigation activeSectionIndex={activeSectionIndex} />
 				Component Section
 			</section>
