@@ -25,7 +25,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(
 								Make your weapons play harder in the configuration you deserver.
 								Use the programmable controls, LIGHTSPEED, Bluetooth wireless
 								16k dpi sensor and 240 battery life to the be the fastest
-								gunslinger on the battlefield.{" "}
+								gunslinger on the battlefield.
 							</p>
 							<button>play advanced</button>
 						</div>
