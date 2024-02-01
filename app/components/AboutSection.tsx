@@ -13,12 +13,12 @@ const AboutSection = forwardRef<HTMLDivElement, Props>(
 		return (
 			<section id='section2' className={styles.Section} ref={ref}>
 				<div className={about.sectionWrapper}>
-					<div className={styles.canvasWrapper}>
-						<canvas>Hejsan</canvas>
+					<div className={about.canvasWrapper}>
+						<canvas></canvas>
 					</div>
-					<div className={styles.aboutWrapper}>
+					<div className={about.informationWrapper}>
 						<div className={about.textContainer}>
-							<h2>MAKE YOUR PLAY</h2>
+							<h1>MAKE YOUR PLAY</h1>
 							<p>
 								Seize control with the C404 — the ultimate weapon for MMO and
 								Battle Royale supremacy. With its ergonomic design tailored for

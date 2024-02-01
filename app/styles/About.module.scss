@@ -11,9 +11,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex: 1;
 }
 
-.aboutWrapper {
+.informationWrapper {
 	@include wrappers;
 }
 
