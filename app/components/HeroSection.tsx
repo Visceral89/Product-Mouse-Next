@@ -18,14 +18,17 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(
 						<div className={hero.textContainer}>
 							<h1>Forge your firepower</h1>
 							<p className={hero.textBold}>
-								all-new c404 for battle royale mastery. Focus your skill and own
-								every moment of the fight.
+								Introducing the all-new C404, engineered for Battle Royale
+								supremacy. Sharpen your skills and dominate every moment of the
+								conflict.
 							</p>
+
 							<p>
-								Make your weapons play harder in the configuration you deserver.
-								Use the programmable controls, LIGHTSPEED, Bluetooth wireless
-								16k dpi sensor and 240 battery life to the be the fastest
-								gunslinger on the battlefield.
+								Elevate your gameplay with the precision you deserve. Harness
+								the power of programmable controls, LIGHTSPEED wireless
+								technology, and Bluetooth connectivity. With a 16K DPI sensor
+								and up to 240 hours of battery life, become the ultimate
+								sharpshooter in every gaming arena.
 							</p>
 							<button>play advanced</button>
 						</div>
