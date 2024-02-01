@@ -3,3 +3,32 @@
 	height: 90vh;
 	z-index: 1;
 }
+
+@mixin flexWrapper($direction: column) {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	@if $direction == column {
+		flex-direction: column;
+	}
+}
+
+.sectionWrapper {
+	@include flexWrapper(row);
+}
+
+.textContainer {
+	width: 500px;
+	text-wrap: balance;
+	text-transform: uppercase;
+	font-weight: 300;
+	gap: 3rem;
+}
+
+.textBold {
+	font-weight: 600;
+}

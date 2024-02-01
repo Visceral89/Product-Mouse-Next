@@ -13,11 +13,11 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(
 	({ activeSectionIndex }, ref) => {
 		return (
 			<section id='section1' className={styles.Section} ref={ref}>
-				<div className={hero.sectionWrapper}>
+				<div className={styles.sectionWrapper}>
 					<div className={hero.informationWrapper}>
-						<div className={hero.textContainer}>
+						<div className={styles.textContainer}>
 							<h1>Forge your firepower</h1>
-							<p className={hero.textBold}>
+							<p className={styles.textBold}>
 								Introducing the all-new C404, engineered for Battle Royale
 								supremacy. Sharpen your skills and dominate every moment of the
 								conflict.

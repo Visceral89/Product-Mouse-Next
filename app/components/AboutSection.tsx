@@ -12,7 +12,7 @@ const AboutSection = forwardRef<HTMLDivElement, Props>(
 	({ activeSectionIndex }, ref) => {
 		return (
 			<section id='section2' className={styles.Section} ref={ref}>
-				<div className={about.sectionWrapper}>
+				<div className={styles.sectionWrapper}>
 					<div className={about.canvasWrapper}>
 						<canvas></canvas>
 					</div>

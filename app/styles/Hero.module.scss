@@ -1,35 +1,8 @@
-.sectionWrapper {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-}
-
-@mixin wrappers {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
+@import "./Section.module.scss";
 .informationWrapper {
-	@include wrappers;
+	@include flexWrapper;
 }
 
 .imageWrapper {
-	@include wrappers;
-}
-
-.textContainer {
-	width: 500px;
-	text-wrap: balance;
-	text-transform: uppercase;
-	font-weight: 300;
-	gap: 3rem;
-}
-
-.textBold {
-	font-weight: 600;
+	@include flexWrapper;
 }
